@@ -25,32 +25,84 @@ const BrandCarousel = () => {
   const settings = {
     dots: true, // Enable pagination dots
     infinite: true, // Enable infinite looping
-    speed: 2000, // Transition speed (milliseconds)
+    speed: 3000, // Transition speed (milliseconds)
     slidesToShow: 5, 
     autoplay: true, // Enable autoplay
-    autoplaySpeed: 2000, // Number of slides visible at once
+    autoplaySpeed: 3000, // Number of slides visible at once
     slidesToScroll: 1,
     cssEase: "linear", // Number of slides to scroll per swipe
     beforeChange: (current, next) => setCurrentIndex(next),
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
 
   
   const setting = {
     dots: true, // Enable pagination dots
     infinite: true, // Enable infinite looping
-    speed: 1500, // Transition speed (milliseconds)
+    speed: 2500, // Transition speed (milliseconds)
     slidesToShow: 5, 
     autoplay: true, // Enable autoplay
-    autoplaySpeed: 1500, // Number of slides visible at once
+    autoplaySpeed: 2500, // Number of slides visible at once
     slidesToScroll: 1,
     cssEase: "linear", // Number of slides to scroll per swipe
     beforeChange: (current, previous) => setCurrentIndex(previous),
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
 
   return (
     <div className="tp-brand-4__area fix py-[70px] h-auto justify-enter items-center flex-row cursor-pinter outline-none border-none">
 
-        <h1 className='text-center justify-center flex items-center text-[60px] text-btn font-poppins font-semibold pb-10'>Our Clients</h1>
+        <h1 className='text-center justify-center flex items-center sm:text-[60px] text-[40px] text-btn font-poppins font-semibold pb-10'>Our Clients</h1>
       <div className="container-fluid gx-0">
         <div className="tp-brand-4-active">
           <Slider {...settings}>

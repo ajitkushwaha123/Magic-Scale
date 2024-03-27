@@ -22,7 +22,7 @@ const Trust = () => {
   ];
 
   return (
-    <div className='w-full flex px-[100px] py-[60px]'>
+    <div className='w-full flex flex-col md:flex-row  md:px-[100px] px-[20px] py-[60px]'>
       {TrustValues.map((val, index) => (
         <TrustCard key={index}
         iconImg={val.iconImg}

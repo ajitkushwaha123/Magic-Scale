@@ -2,13 +2,13 @@ import React from 'react';
 import { hoursIcon } from '../assets'; 
 
 const TrustCard = ({ borderWidth = "2", iconImg, title, description }) => {
-  // Set a default borderWidth if not provided
+
   return (
-    <div className={`flex px-[20px] border-r-${borderWidth} border-dotted border-gray-400`}>
-      <img className='w-[83px] h-[83px]' src={iconImg} alt={title} /> {/* Added alt text for accessibility */}
-      <div className='px-[20px]'>
-        <strong className='mb-[6px] font-medium leading-[1.2] text-[#111] text-[24px] capitalize pb-[3px]'>{title}</strong>
-        <p className='font-normal pt-[12px] text-[16px] leading-6 text-[#72747c]'>{description}</p>
+    <div className={`flex px-[20px] justify-center items-center border-r-${borderWidth} border-dotted border-gray-400`}>
+      <img className='md:w-[83px] md:h-[83px] w-[60px] h-[60px]' src={iconImg} alt={title} /> 
+      <div className='pl-[28px] py-[15px]'>
+        <strong className='mb-[6px] font-medium text-[#111] text-[24px] capitalize pb-[20px]'>{title}</strong>
+        <p className='font-normal pt-[7px] text-[16px] text-[#72747c] pr-[13px]'>{description}</p>
       </div>
     </div>
   );

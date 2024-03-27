@@ -71,31 +71,37 @@ const Products = () => {
         <div className='flex flex-col justify-center items-center'>
             <h1 className='font-semibold text-5xl text-btn flex justify-center items-center'>Services</h1>
 
-            <div className='pt-10 pb-4 uppercase font-bold text-[22px]'>
-                <button onClick={tab1} className='mr-4  hover:text-btn text-[20px] ml-[30px] text-medium'>
-                    Restaurant Services
+            <div className='pt-10 pb-4 text-center uppercase font-bold text-[22px]'>
+                <button onClick={tab1} className={`md:mr-4 hover:text-btn text-[20px] md:ml-[30px] px-[12px] text-medium ${isTab == 0 ? "text-btn" : "text-[#111]"}`}>
+                    Restaurant 
                 </button>
-                <button onClick={tab2} className='mr-4 text-[20px]  hover:text-btn ml-[30px] text-medium'>
+                <button onClick={tab2} className={`md:mr-4 hover:text-btn text-[20px] md:ml-[30px] px-[12px] text-medium ${isTab == '1' ? "text-btn" : "text-[#111]"}`}>
+                    D2C
+                </button>
+                <button onClick={tab3} className={`md:mr-4 hover:text-btn text-[20px] md:ml-[30px] px-[12px] text-medium ${isTab == '-1' ? "text-btn" : "text-[#111]"}`}>
+                    Cloud Kitchen
+                </button>
+                {/* <button onClick={tab2} className={`mr-4 hover:text-btn text-[20px] ml-[30px] text-medium ${isTab == 0 ? "text-btn" : "text-[#111]"}`>
                     D2C Services
                 </button>
-                <button onClick={tab3} className='mr-4 text-[20px] ml-[30px]  hover:text-btn text-medium'>
+                <button onClick={tab3} className={`mr-4 hover:text-btn text-[20px] ml-[30px] text-medium ${isTab == 0 ? "text-btn" : "text-[#111]"}`>
                     Cloud Kitchen Services
-                </button>
+                </button> */}
             </div>
 
             {isTab === '0' && (
-                <div className='px-16 py-8 flex justify-center items-center'>
+                <div className='px-16 pt-8 flex flex-col md:flex-row justify-center items-center'>
                     {restaurantItems.map((item, index) => (
                         <div
                             key={index}
-                            className='mx-8 rounded-xl py-[28px] border-2 shadow-lg shadow-indigo-500/40 flex flex-col items-center justify-center w-64 px-4'
+                            className='mx-8 rounded-xl mb-[40px] py-[28px] border-2 shadow-lg shadow-indigo-500/40 flex flex-col items-center justify-center w-64 px-4'
                         >
-                            <div className='w-40 h-40 p-2 border-2 bg-white shadow-lg shadow-indigo-500/50 mb-4'>
+                            <div className='w-40 mb-[40px] h-40 p-2 border-2 bg-white shadow-lg shadow-indigo-500/50 mb-4'>
                                 <img src={item.serviceImg} alt={item.btnTitle} className='w-full h-full object-cover' />
                             </div>
                             <Button
                                 colors='#fff'
-                                className='mt-[10px]'
+                                className='mt-[30px]'
                                 title={item.btnTitle}
                                 bgColor='btn'
                                 hoverColor='#111'
@@ -109,18 +115,18 @@ const Products = () => {
             )}
 
 {isTab === '1' && (
-                <div className='px-16 py-8 flex justify-center items-center'>
+                <div className='px-16 pt-8 flex justify-center flex-col md:flex-row items-center'>
                     {Eccommerce.map((item, index) => (
                         <div
                             key={index}
-                            className='mx-8 rounded-xl py-[28px] border-2 shadow-lg shadow-indigo-500/40 flex flex-col items-center justify-center w-64 px-4'
+                            className='mx-8 mb-[40px] rounded-xl py-[28px] border-2 shadow-lg shadow-indigo-500/40 flex flex-col items-center justify-center w-64 px-4'
                         >
-                            <div className='w-40 h-40 p-6 border-2 bg-white shadow-lg shadow-indigo-500/50 mb-4'>
+                            <div className='w-40 h-40 p-6 mb-[40px] border-2 bg-white shadow-lg shadow-indigo-500/50 mb-4'>
                                 <img src={item.serviceImg} alt={item.btnTitle} className='w-full h-full object-cover' />
                             </div>
                             <Button
                                 colors='#fff'
-                                className='mt-[10px]'
+                                className='mt-[30px]'
                                 title={item.btnTitle}
                                 bgColor='btn'
                                 hoverColor='#111'
@@ -134,18 +140,18 @@ const Products = () => {
             )}
 
 {isTab === '-1' && (
-                <div className='px-16 py-8 flex justify-center items-center'>
+                <div className='px-16 pt-8 flex justify-center flex-col md:flex-row items-center'>
                     {Cloudkitchen.map((item, index) => (
                         <div
                             key={index}
                             className='mx-8 rounded-xl py-[28px] border-2 shadow-lg shadow-indigo-500/40 flex flex-col items-center justify-center w-64 px-4'
                         >
-                            <div className='w-40 h-40 p-6 border-2 bg-white shadow-lg shadow-indigo-500/50 mb-4'>
+                            <div className='w-40 h-40 mb-[40px] p-6 border-2 bg-white shadow-lg shadow-indigo-500/50 mb-4'>
                                 <img src={item.serviceImg} alt={item.btnTitle} className='w-full h-full object-cover' />
                             </div>
                             <Button
                                 colors='#fff'
-                                className='mt-[10px]'
+                                className='mt-[30px]'
                                 title={item.btnTitle}
                                 bgColor='btn'
                                 hoverColor='#111'
